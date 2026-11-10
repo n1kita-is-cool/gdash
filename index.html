@@ -3,87 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Geometry Dash</title>
+    <title>Geometry Dash Lite</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        header {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            color: #38bdf8;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            color: #94a3b8;
-            font-size: 1rem;
-        }
-
-        #canvas-container {
-            width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
             background-color: #000;
-            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 2px solid #1e293b;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
-        /* Adjust canvas size depending on how your gdash.js targets its rendering engine */
+        /* Many scratch/html5 ports use a canvas element with id="canvas" or id="game" */
         canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        footer {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: #64748b;
+            width: 100vw;
+            height: 56.25vw; /* 16:9 Aspect Ratio */
+            max-height: 100vh;
+            max-width: 177.78vh;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Geometry Dash</h1>
-        <p>Use Spacebar, Up Arrow, or Click to Jump!</p>
-    </header>
+    <canvas id="canvas"></canvas>
 
-    <!-- The container where your local script will load the game interface -->
-    <div id="canvas-container">
-        <canvas id="canvas"></canvas>
-    </div>
-
-    <footer>
-        Running Local Offline Asset Build
-    </footer>
-
-    <!-- This line tells index.html to read and execute your game file -->
     <script src="gdash.js"></script>
-
 </body>
 </html>
